@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+ifstream fin ("in.txt");
+int s,x,a,c;
+int main()
+{
+    FILE *n=fopen("in.txt", "r");
+    while(1) {
+      if( feof(n) ) {
+         break ;
+      }
+      c=fgetc(n);
+      cout<<c;
+      while(c!=NULL)
+      {
+       a=c-30;
+       x=x*10+a;
+       c=fgetc(n);
+      }
+    s=s+x;
+    x=0;
+   }
+    printf("%d", s);
+    fclose(n);
+    return 0;
+}
